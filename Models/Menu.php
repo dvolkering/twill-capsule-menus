@@ -16,7 +16,7 @@ use App\Twill\Capsules\Menus\Models\Revisions\MenuRevision;
 
 class Menu extends Model implements Sortable
 {
-    use HasBlocks, HasTranslation, HasSlug, HasFiles, HasRevisions, HasPosition;
+    use HasBlocks, HasTranslation, HasSlug, HasFiles, HasRevisions, HasPosition, HasMedias;
 
     protected $presenterAdmin = MenuPresenter::class;
 

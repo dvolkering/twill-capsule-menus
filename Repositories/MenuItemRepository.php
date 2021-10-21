@@ -16,6 +16,8 @@ class MenuItemRepository extends ModuleRepository
         'menu'
     ];
 
+    protected $relatedBrowsers = ['related_menu'];
+
     public function __construct(MenuItem $model)
     {
         $this->model = $model;
@@ -37,7 +39,7 @@ class MenuItemRepository extends ModuleRepository
 
     public function afterSave($object, $fields)
     {
-        $this->updateRelatedBrowser($object, $fields, 'related_menu');
+        //$this->updateRelatedBrowser($object, $fields, 'related_menu');
         $fields['browsers']['menu'][]['id'] =     session('currentMenuAdmin');
 
         parent::afterSave($object, $fields);
